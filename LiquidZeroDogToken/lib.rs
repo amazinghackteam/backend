@@ -94,21 +94,5 @@ mod LiquidZeroDogToken {
             assert_eq!(liquidZeroDogToken.transfer(accounts.bob, 10), Ok(()));
             assert_eq!(liquidZeroDogToken.balance_of(accounts.bob), 10);
         }
-
-        /// We test if the default constructor does its job.
-        #[ink::test]
-        fn default_works() {
-            let liquidZeroDogToken = LiquidZeroDogToken::default();
-            assert_eq!(liquidZeroDogToken.get(), false);
-        }
-
-        /// We test a simple use case of our contract.
-        #[ink::test]
-        fn it_works() {
-            let mut liquidZeroDogToken = LiquidZeroDogToken::new(false);
-            assert_eq!(liquidZeroDogToken.get(), false);
-            liquidZeroDogToken.flip();
-            assert_eq!(liquidZeroDogToken.get(), true);
-        }
     }
 }
