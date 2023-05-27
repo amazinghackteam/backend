@@ -3,6 +3,8 @@
 #[ink::contract]
 mod LiquidZeroDogToken {
 
+    use ink::storage::Mapping;
+
     /// Defines the storage of your contract.
     /// Add new fields to the below struct in order
     /// to add new static storage fields to your contract.
@@ -21,6 +23,9 @@ mod LiquidZeroDogToken {
     }
 
     impl LiquidZeroDogToken {
+        /// Constructor that initializes the `bool` value to `false`.
+        ///
+        /// Constructors can delegate to other constructors.
        #[ink(constructor)]
         pub fn new(total_supply: Balance) -> Self {
             let mut balances = Mapping::default();
@@ -54,14 +59,6 @@ mod LiquidZeroDogToken {
             let to_balance = self.balance_of(to);
             self.balances.insert(to, &(to_balance + value));
             Ok(())
-        }
-
-        /// Constructor that initializes the `bool` value to `false`.
-        ///
-        /// Constructors can delegate to other constructors.
-        #[ink(constructor)]
-        pub fn default() -> Self {
-            Self::new(Default::default())
         }
 
         /// A message that can be called on instantiated contracts.
