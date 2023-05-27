@@ -71,44 +71,44 @@ mod LiquidZeroDogToken {
 
         #[ink::test]
         fn total_supply_works() {
-            let LiquidZeroDogToken = LiquidZeroDogToken::new(100);
-            assert_eq!(LiquidZeroDogToken.total_supply(), 100);
+            let liquidZeroDogToken = LiquidZeroDogToken::new(100);
+            assert_eq!(liquidZeroDogToken.total_supply(), 100);
         }
 
         #[ink::test]
         fn balance_of_works() {
-            let LiquidZeroDogToken = LiquidZeroDogToken::new(100);
+            let liquidZeroDogToken = LiquidZeroDogToken::new(100);
             let accounts =
                 ink::env::test::default_accounts::<ink::env::DefaultEnvironment>();
-            assert_eq!(LiquidZeroDogToken.balance_of(accounts.alice), 100);
-            assert_eq!(LiquidZeroDogToken.balance_of(accounts.bob), 0);
+            assert_eq!(liquidZeroDogToken.balance_of(accounts.alice), 100);
+            assert_eq!(liquidZeroDogToken.balance_of(accounts.bob), 0);
         }
 
         #[ink::test]
         fn transfer_works() {
-            let mut LiquidZeroDogToken = LiquidZeroDogToken::new(100);
+            let mut liquidZeroDogToken = LiquidZeroDogToken::new(100);
             let accounts =
                 ink::env::test::default_accounts::<ink::env::DefaultEnvironment>();
 
-            assert_eq!(LiquidZeroDogToken.balance_of(accounts.bob), 0);
-            assert_eq!(LiquidZeroDogToken.transfer(accounts.bob, 10), Ok(()));
-            assert_eq!(LiquidZeroDogToken.balance_of(accounts.bob), 10);
+            assert_eq!(liquidZeroDogToken.balance_of(accounts.bob), 0);
+            assert_eq!(liquidZeroDogToken.transfer(accounts.bob, 10), Ok(()));
+            assert_eq!(liquidZeroDogToken.balance_of(accounts.bob), 10);
         }
 
         /// We test if the default constructor does its job.
         #[ink::test]
         fn default_works() {
-            let LiquidZeroDogToken = LiquidZeroDogToken::default();
-            assert_eq!(LiquidZeroDogToken.get(), false);
+            let liquidZeroDogToken = LiquidZeroDogToken::default();
+            assert_eq!(liquidZeroDogToken.get(), false);
         }
 
         /// We test a simple use case of our contract.
         #[ink::test]
         fn it_works() {
-            let mut LiquidZeroDogToken = LiquidZeroDogToken::new(false);
-            assert_eq!(LiquidZeroDogToken.get(), false);
-            LiquidZeroDogToken.flip();
-            assert_eq!(LiquidZeroDogToken.get(), true);
+            let mut liquidZeroDogToken = LiquidZeroDogToken::new(false);
+            assert_eq!(liquidZeroDogToken.get(), false);
+            liquidZeroDogToken.flip();
+            assert_eq!(liquidZeroDogToken.get(), true);
         }
     }
 }
