@@ -1,0 +1,28 @@
+{
+  "nfts": {
+    "1": {
+      "id": "1",
+      "name": "Rainbow Cat #1/9999",
+      "description": "A colorful and rare rainbow cat",
+      "price": 50,
+      "exchange_rate": "21 Robot Dogs",
+      "contract_address": "0x123abc",
+      "type": "Rainbow Cat",
+      "wallet_address": "0xabc123",
+      "status": "For Sale",
+      "owner": "Liquidity Pool"
+    },
+    "2": {
+      "id": "2",
+      "name": "Robot Dog #1/9999",
+      "description": "A high-tech and loyal robot dog",
+      "price": 100,
+      "exchange_rate": "10 Rainbow Cats",
+      "contract_address": "0xabc123",
+      "type": "Robot Dog",
+      "wallet_address": "0xabc123",
+      "status": "User's NFT",
+      "owner": "User Wallet"
+    }
+  }
+}

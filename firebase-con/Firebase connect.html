@@ -1,0 +1,29 @@
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+<script>
+    // TODO: Replace with your Firebase project's configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCT0e7iNj7aFK_1x3GQi0ufP5NiRDkU748",
+        authDomain: "amazinghackteam.firebaseapp.com",
+        databaseURL: "https://amazinghackteam-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "amazinghackteam",
+        storageBucket: "amazinghackteam.appspot.com",
+        messagingSenderId: "234233426825",
+        appId: "1:234233426825:web:a8a3de8f5295b71d0be758",
+        measurementId: "G-E68T98EQBP"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    var database = firebase.database();
+  </script>
+  <script>
+    var nftsRef = database.ref('nfts');
+    
+    nftsRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      console.log(data);
+      // TODO: Update frontend with the new data
+    });
+  </script>
